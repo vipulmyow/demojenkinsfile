@@ -1,0 +1,47 @@
+pipeline {
+    agent any    
+    environment{
+        name = 'vipul'
+    }     
+    parameters {
+        string(name:'person', defaultValue: 'Vipul Patil', description: "who are you?")
+        booleanParam(name:'ismale', defaultValue: ' true', description: "who are you?")
+ 
+    }
+
+    stages {
+        stage('test') {
+            steps {
+                echo 'test'
+            }
+        }
+        
+                stage ('Parameters ') {
+            steps {
+             sh  ' echo " ${name} " '    
+                  sh  ' echo " ${person} " '
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                echo 'build'
+            
+                            }           
+        }
+
+        stage('Deploy to test') {
+            steps {
+                echo 'Deploy test '
+            }
+        }
+
+        stage(' Deploy to Prod') {
+            steps {
+                echo 'Deploy to Prod'
+            }
+        }
+
+
+    }
+}
