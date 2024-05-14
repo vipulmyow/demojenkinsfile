@@ -25,7 +25,9 @@ pipeline {
         
      stage("A"){
             steps{
-                echo "========executing A========"
+                echo 'this a service web '
+                sh '''pwd
+date'''
             }
         }
             stage("B"){
