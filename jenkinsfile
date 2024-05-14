@@ -23,22 +23,19 @@ pipeline {
             }
         }
         
-        stage('Build') {
-            steps {
-                echo 'build'
-            
-                            }           
-        }
-
-        stage('Deploy to test') {
-            steps {
-                echo 'Deploy test '
+     stage("A"){
+            steps{
+                echo "========executing A========"
             }
         }
-
-        stage(' Deploy to Prod') {
-            steps {
-                echo 'Deploy to Prod'
+            stage("B"){
+            steps{
+                echo "========executing B========"
+            }
+        }
+            stage("C"){
+            steps{
+                echo "========executing C========"
             }
         }
 
